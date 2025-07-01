@@ -42,17 +42,10 @@
 git clone https://github.com/baib-web/telegram_video_bot.git
 cd telegram_video_bot
 ```
-### 3. 设置虚拟环境 (Set up Virtual Environment)
-
-`python3 -m venv venv`
-# Windows:
-`.\venv\Scripts\activate.bat`
-# macOS/Linux:
-`source venv/bin/activate`
-### 4. 安装依赖 (Install Dependencies)
+### 3. 安装依赖 (Install Dependencies)
 
 `pip install -r requirements.txt`
-### 5. 配置环境变量 (.env File)
+### 4. 配置环境变量 (.env File)
 修改 .env 文件
 
 代码段
@@ -64,7 +57,7 @@ TELEGRAM_CHANNEL_ID="" # 可选，你的频道ID，通常是负数，例如 -100
 ```
 请替换 YOUR_BOT_TOKEN_HERE 和 TELEGRAM_CHANNEL_ID 为你的实际值。
 
-### 6. 运行机器人 (Run the Bot)
+### 5. 运行机器人 (Run the Bot)
 `python bot.py`
 
 ---
