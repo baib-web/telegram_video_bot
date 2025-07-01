@@ -8,7 +8,6 @@
 * **拥有类似“购物清单”的下载任务列表和队列管理功能。**
 * 将下载的视频发送给用户。
 * 自动转发视频到 Telegram 频道或群组。
-* 下载进度实时更新。
 
 ## ⚙️ 核心技术 (Under the Hood)
 
@@ -22,7 +21,6 @@
 
 1.  **视频大小限制：** 由于本项目使用的是 Telegram Bot API 的 `send_video` 方法，**直接发送视频文件目前存在约 50MB 的限制。**
     * **小于 50MB** 的视频会作为原生的视频文件发送，用户可以直接播放和流式传输。
-    * **大于 50MB 但小于 2GB** 的视频，Bot API 会将其**自动作为文件 (Document) 发送**，而不是作为可流式传输的视频。这意味着用户需要先下载才能播放。
     * 这个限制是 Telegram Bot API 的特性，而非本项目代码的限制。如果需要突破此限制并直接作为视频文件发送大文件，则需要使用 Telegram 的 MTProto 协议 (例如 Pyrogram 或 Telethon 库)，但这超出了当前项目的范畴。
 
 2.  **下载队列与清晰度选择：**
@@ -41,8 +39,8 @@
 
 ### 2. 克隆项目 (Clone the Repository)
 ```bash
-git clone [https://github.com/你的用户名/你的项目名.git](https://github.com/你的用户名/你的项目名.git)
-cd 你的项目名
+git clone https://github.com/baib-web/telegram_video_bot.git
+cd telegram_video_bot
 ```
 ### 3. 设置虚拟环境 (Set up Virtual Environment)
 
@@ -55,7 +53,7 @@ cd 你的项目名
 
 `pip install -r requirements.txt`
 ### 5. 配置环境变量 (.env File)
-在项目根目录创建 .env 文件，并填入以下信息：
+修改 .env 文件
 
 代码段
 ```
@@ -67,9 +65,9 @@ TELEGRAM_CHANNEL_ID="" # 可选，你的频道ID，通常是负数，例如 -100
 请替换 YOUR_BOT_TOKEN_HERE 和 TELEGRAM_CHANNEL_ID 为你的实际值。
 
 ### 6. 运行机器人 (Run the Bot)
-Bash
-
 `python bot.py`
+
+---
 
 📜 许可证 (License)
 本项目采用 MIT 许可证。
