@@ -1,0 +1,7 @@
+pyrogram
+python-dotenv
+yt-dlp
+ffmpeg-python
+
+
+
